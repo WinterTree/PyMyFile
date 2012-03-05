@@ -4,5 +4,4 @@
 from Model import ImageDBModeler
 
 a = ImageDBModeler.ImageLogic()
-a.image_insert(fname=u"日本語",uptm=u"2012-12-12")
-
+a.image_insert(fname=u"ほげほげ",uptm=u"2012-12-12")
