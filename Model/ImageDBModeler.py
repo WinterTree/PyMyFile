@@ -23,10 +23,20 @@ class Image(BaseModel):
 #insert等
 class ImageLogic(object):
     def __init__(self):
-        Image.create_table(True)
+        pass
+        ##Image.create_table(True)
 
     def image_insert(self,fname,uptm,pswd="1234",ftitle=None,cmt=None,tg=None,shtday=None):
         sq = peewee.InsertQuery(Image,file_name=fname,file_title=ftitle,comment=cmt,
                                 tags=tg,passwd=pswd,uptime=uptm,shootday=shtday)
         sq.execute()
         return True
+
+    def get_id(self, offset=0, limit=8, order=True):
+        sq = Image.Select()
+        print sq
+
+
+sq = Image.select()
+res = [u.img_id for u in sq]
+print res
